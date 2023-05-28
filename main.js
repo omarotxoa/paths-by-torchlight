@@ -26,7 +26,7 @@ loginForm.addEventListener("submit", (e) => {
       alert("Ensure you input a value in both fields!");
     } else {
       // perform operation with form input
-      window.location.href = "./main.html";
+      window.location.href = "./develop.html";
     }
   });
 
