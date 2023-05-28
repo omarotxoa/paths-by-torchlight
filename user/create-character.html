@@ -8,6 +8,52 @@
 </head>
 <body>
     <p><a href="/develop.html">Back to Develop</a></p>
-    
+    <form>
+        <div>
+            <label for="character-name">Character Name:</label>
+            <input type="text" id="character-name" name="character-name">
+        </div>
+        <div>
+            <label for="gender">Male or Female?</label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div>
+            <label for="character-weapon">Select your starting weapon</label>
+            <select name="character-weapon" id="character-weapon">
+                <option value="bloody-hand-wraps">Bloody Hand Wraps</option>
+                <option value="pocket-knife">Dirty Pocket Knife</option>
+                <option value="wooden-club">Wooden Club</option>
+                <option value="old-bow">Old Bow</option>
+                <option value="blunt-sword">Blunted Sword</option>
+                <option value="rusty-sword">Rusty Axe</option>
+                <option value="broken-wand">Broken Wand</option>
+                <option value="worn-mace">Worn Mace</option>
+            </select>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Choose Race(s):</legend>
+                <div>
+                    <input type="checkbox" name="race" id="race-human" value="human">
+                    <label for="race-human">Human</label>
+                    <input type="checkbox" name="race" id="race-Dwarf" value="dwarf">
+                    <label for="race-dwarf">Dwarf</label>
+                    <input type="checkbox" name="race" id="race-orc" value="orc">
+                    <label for="race-orc">Orc</label>
+                    <input type="checkbox" name="race" id="race-elf" value="elf">
+                    <label for="race-elf">Elf</label>
+                </div>
+                <div>
+                    
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            <button type="submit">Create Character</button>
+        </div>
+    </form>
 </body>
 </html>
