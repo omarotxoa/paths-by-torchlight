@@ -11,8 +11,13 @@ if ("serviceWorker" in navigator) {
 // Login Form Logic
 
 let loginForm = document.querySelector("#login");
+let submitBtn = document.querySelector("#login button");
+
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    //disable submit button to prevent multiple submissions
+    submitBtn.disabled = true; 
   
     let username = document.getElementById("username");
     let password = document.getElementById("password");
