@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Character</title>
+    <script src="/form.js" defer></script>
 </head>
 <body>
     <p><a href="/develop.html">Back to Develop</a></p>
-    <form>
+    <form id="create-character-form">
         <div>
             <label for="character-name">Character Name:</label>
             <input type="text" id="character-name" name="character-name">
         </div>
         <div>
-            <label for="gender">Male or Female?</label>
-            <select name="gender" id="gender">
+            <label for="character-gender">Male or Female?</label>
+            <select name="character-gender" id="character-gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
