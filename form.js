@@ -28,31 +28,37 @@ if(document.querySelector("#create-character-form")) {
     characterForm.addEventListener("submit", (e) => {
         e.preventDefault();   
 
-        let characterName = document.querySelector("#character-name");
-        let characterGender = document.querySelector("#character-gender");
-        let characterWeapon = document.querySelector("#character-weapon");
-        let characterRace = document.querySelectorAll("input[name='race']:checked");
-        // let characterRace = [1, 2, 3];
+        // Get Form Data
+            let characterName = document.querySelector("#character-name");
+            let characterGender = document.querySelector("#character-gender");
+            let characterWeapon = document.querySelector("#character-weapon");
+            let characterRace = document.querySelectorAll("input[name='race']:checked");
+            // let characterRace = [1, 2, 3];
 
-        let characterRaces = [];
-        characterRace.forEach( (elem) => {
-            characterRaces.push(elem.value);
-        });
+            let characterRaces = [];
+            characterRace.forEach( (elem) => {
+                characterRaces.push(elem.value);
+            });
 
-        const characterData = [];
+        // Create Character Object
+            const characterData = [];
+            let id = 0;
 
-        const newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+            const transaction = db.transaction(["customers"], "readwrite");
 
-        characterData.push(newCharacter);
-        console.log(characterData);
+            const newCharacter = new Character(id, characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+
+            characterData.push(newCharacter);
+            console.log(characterData);
 
         console.log(`${characterName.value}, ${characterGender.value}, ${characterWeapon.value}, ${characterRaces}`);
     });
 
-    function Character(name,gender,weapon,races) {
+    function Character(id, name,gender,weapon,races) {
         this.name = name;
         this.gender = gender;
         this.weapon = weapon;  
         this.races = races;
+        this.id = id;
     }
 }
