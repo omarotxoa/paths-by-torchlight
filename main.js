@@ -1,3 +1,4 @@
+// Service Worker
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/serviceworker.js").then(registration => {
         console.log("SW Registered!");
@@ -9,11 +10,7 @@ if ("serviceWorker" in navigator) {
 }
 
 
-
-
-
 // Database
-
 const dbname = "char_list";
 const request = indexedDB.open(dbname, 1);
 
