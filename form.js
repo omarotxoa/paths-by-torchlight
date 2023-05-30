@@ -42,23 +42,44 @@ if(document.querySelector("#create-character-form")) {
 
         // Create Character Object
             const characterData = [];
-            let id = 0;
 
-            const transaction = db.transaction(["customers"], "readwrite");
-
-            const newCharacter = new Character(id, characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+            const newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
 
             characterData.push(newCharacter);
             console.log(characterData);
 
+        // Add Character Data to IndexedDB
+
+            const request = indexedDB.open("char_list", 1);
+
+            request.onsuccess = (event) => {
+                const db = event.target.result;
+                console.log("Connection complete");
+                
+                const transaction = db.transaction(["characters"], "readwrite");
+                const objectStore = transaction.objectStore("characters");
+                const objectStoreRequest = objectStore.add(characterData);
+
+                objectStoreRequest.onsuccess = (event) => {
+                    console.log("Character data added to the database");
+                };
+
+                transaction.oncomplete = (event) => {
+                    console.log("Transactin complete successfully.");
+                };
+                    
+                transaction.onerror = (event) => {
+                    console.log(event.target.errorCode);
+                };
+            }; 
+
         console.log(`${characterName.value}, ${characterGender.value}, ${characterWeapon.value}, ${characterRaces}`);
     });
 
-    function Character(id, name,gender,weapon,races) {
+    function Character(name,gender,weapon,races) {
         this.name = name;
         this.gender = gender;
         this.weapon = weapon;  
         this.races = races;
-        this.id = id;
     }
 }
