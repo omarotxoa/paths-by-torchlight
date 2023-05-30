@@ -33,7 +33,6 @@ if(document.querySelector("#create-character-form")) {
             let characterGender = document.querySelector("#character-gender");
             let characterWeapon = document.querySelector("#character-weapon");
             let characterRace = document.querySelectorAll("input[name='race']:checked");
-            // let characterRace = [1, 2, 3];
 
             let characterRaces = [];
             characterRace.forEach( (elem) => {
@@ -41,9 +40,9 @@ if(document.querySelector("#create-character-form")) {
             });
 
         // Create Character Object
-            const characterData = [];
+            let characterData = [];
 
-            const newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+            let newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
 
             characterData.push(newCharacter);
             console.log(characterData);
