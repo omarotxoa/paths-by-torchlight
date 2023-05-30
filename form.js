@@ -39,10 +39,20 @@ if(document.querySelector("#create-character-form")) {
             characterRaces.push(elem.value);
         });
 
+        const characterData = [];
+
+        const newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+
+        characterData.push(newCharacter);
+        console.log(characterData);
+
         console.log(`${characterName.value}, ${characterGender.value}, ${characterWeapon.value}, ${characterRaces}`);
     });
 
-    function getFormData() {
-        
+    function Character(name,gender,weapon,races) {
+        this.name = name;
+        this.gender = gender;
+        this.weapon = weapon;  
+        this.races = races;
     }
 }
