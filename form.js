@@ -29,6 +29,7 @@ if(document.querySelector("#create-character-form")) {
         e.preventDefault();   
 
         // Get Form Data
+            let characterLevel = 1;
             let characterName = document.querySelector("#character-name");
             let characterGender = document.querySelector("#character-gender");
             let characterWeapon = document.querySelector("#character-weapon");
@@ -42,7 +43,7 @@ if(document.querySelector("#create-character-form")) {
         // Create Character Object
             let characterData = [];
 
-            let newCharacter = new Character(characterName.value, characterGender.value, characterWeapon.value, characterRaces);
+            let newCharacter = new Character(characterName.value, characterLevel, characterGender.value, characterWeapon.value, characterRaces);
 
             characterData.push(newCharacter);
             console.log(characterData);
@@ -75,8 +76,9 @@ if(document.querySelector("#create-character-form")) {
         console.log(`${characterName.value}, ${characterGender.value}, ${characterWeapon.value}, ${characterRaces}`);
     });
 
-    function Character(name,gender,weapon,races) {
+    function Character(name,level,gender,weapon,races) {
         this.name = name;
+        this.level = level;
         this.gender = gender;
         this.weapon = weapon;  
         this.races = races;
