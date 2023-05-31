@@ -1,8 +1,7 @@
 // Get Character List
 const characterListContainer = document.querySelector(".character-list");
-getCharacterList();
 
-function getCharacterList() {
+(function () {
     const request = indexedDB.open("char_list", 1);
     request.onsuccess = (event) => {
         const db = event.target.result;
@@ -27,7 +26,7 @@ function getCharacterList() {
             targetElement.innerHTML = `<p class="error">Error: ${event.target.errorCode}</p>`;
         }
     };
-}
+})();
 
 function printCharacter(character) {
     const pElement = document.createElement("p");
