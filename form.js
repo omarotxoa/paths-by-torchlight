@@ -74,6 +74,8 @@ if(document.querySelector("#create-character-form")) {
             }; 
 
         console.log(`${characterName.value}, ${characterGender.value}, ${characterWeapon.value}, ${characterRaces}`);
+
+        window.location.href = "./characters.html";
     });
 
     function Character(name,level,gender,weapon,races) {
