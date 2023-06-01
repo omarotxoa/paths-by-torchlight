@@ -5,7 +5,7 @@ self.addEventListener("install", e => {
                 "./", 
                 // "./main.js",
                 // "form.js", 
-                "develop.html", 
+                // "develop.html", 
                 "./img/icon-48.png", 
                 "./img/icon-96.png",  
                 "./img/icon-256.png", 
