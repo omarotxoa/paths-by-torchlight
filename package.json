@@ -1,0 +1,14 @@
+{
+  "name": "paths-by-torchlight",
+  "version": "1.0.0",
+  "description": "A Dark Fantasy Explorer Looter RPG w/ AFK Elements",
+  "main": "main.js",
+  "scripts": {
+    "sass": "node-sass -w styles/styles.scss -o css/ --recursive"
+  },
+  "author": "Omar Ochoa",
+  "license": "CC BY-NC-ND 3.0",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
