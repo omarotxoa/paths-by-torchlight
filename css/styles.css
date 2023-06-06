@@ -3,6 +3,17 @@
   margin: 0;
   box-sizing: border-box; }
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.stack > * {
+  margin-block: 0; }
+
+.stack > * + * {
+  margin-block-start: var(--space, 0.5rem); }
+
 body {
   position: relative;
   background-color: #000;
@@ -27,5 +38,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-#login {
-  border: 1px solid black; }
+#login input,
+#login button {
+  width: 100%;
+  padding: .5em;
+  background-color: #323232;
+  border: 2px inset #7c4f2b;
+  color: white; }
+
+#login input:hover {
+  background-color: #373737; }
+
+#login button:hover {
+  background-color: #d6792c; }

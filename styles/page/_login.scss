@@ -7,5 +7,18 @@
 }
 
 #login {
-    border: 1px solid black;
+    input,
+    button {
+        width: 100%;
+        padding: .5em;
+        background-color: #323232;
+        border: 2px inset rgb(124, 79, 43);
+        color: white;
+    }
+    input:hover {
+        background-color: lighten(#323232, 2%);
+    }
+    button:hover {
+        background-color: rgb(214, 121, 44);
+    }
 }
