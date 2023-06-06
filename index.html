@@ -14,18 +14,22 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 <body>
-    <h1>Path's by Torchlight</h1>
-    <img src="./img/icon-256.png" alt="">
-    <form id="login">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <button type="submit">Login</button>
-    </form>
+    <picture class="background">
+        <source media="(min-width: 720px)" srcset="/img/login-screen.jpg">
+        <source media="(min-width: 540px)" srcset="/img/login-portrait.jpg">
+        <img src="/img/login-screen-portrait.jpg" alt="Login Screen">
+    </picture>
+    <div class="page page-login">
+        <h1>Path's by Torchlight</h1>
+        <form id="login">
+            <div>
+                <input type="text" id="username" name="username" placeholder="username">
+            </div>
+            <div>
+                <input type="password" id="password" name="password" placeholder="login">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>

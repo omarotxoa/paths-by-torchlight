@@ -1,0 +1,11 @@
+.page-login {
+    display: flex;
+    flex-direction: column;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login {
+    border: 1px solid black;
+}
