@@ -6,9 +6,15 @@
 body {
   position: relative;
   background-color: #000;
-  color: #fff; }
+  color: #fff;
+  height: 100vh;
+  overflow: hidden; }
   body .background img {
-    width: 100%; }
+    width: 100%;
+    object-fit: cover; }
+    @media (min-width: 720px) {
+      body .background img {
+        height: 100vh; } }
 
 .page {
   position: absolute;

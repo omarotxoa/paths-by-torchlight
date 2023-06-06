@@ -7,9 +7,15 @@ body {
     position: relative;
     background-color: #000;
     color: #fff;
+    height: 100vh;
+    overflow: hidden;
     .background {
         img {
             width: 100%;
+            object-fit: cover;
+            @media (min-width: 720px) {
+                height: 100vh;
+            }
         }
     }
 }
